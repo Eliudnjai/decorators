@@ -24,14 +24,14 @@ def decorator_with_number(number):
             if number == 58:
                 print("this works")
             else:
-                func()
+                func(*args,**kwargs)
             print("end")
         return second_decorator
     return first_decorators
 
 
 @decorator_with_number(57)
-def my_function_new():
-    print("client")
+def my_function_new(x, y):
+    print(x+y)
 
-my_function_new()
+my_function_new(57,66)
